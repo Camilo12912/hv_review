@@ -1,0 +1,127 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Body general */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #1e293b;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Encabezado principal */
+  h1 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    color: #3b82f6;
+  }
+  
+  /* Texto introductorio */
+  .intro-text {
+    text-align: center;
+    font-size: 1.1em;
+    color: #64748b;
+    margin-bottom: 30px;
+  }
+  
+  /* Formulario de carga */
+  .upload-form {
+    margin-bottom: 40px;
+  }
+  
+  .upload-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1e293b;
+  }
+  
+  input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    font-size: 15px;
+    transition: border 0.3s;
+  }
+  
+  input[type="file"]:hover {
+    border-color: #3b82f6;
+  }
+  
+  /* Botón de envío */
+  button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Resultados */
+  .results h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1e293b;
+  }
+  
+  /* Tarjeta de CV */
+  .cv-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 5px solid #3b82f6;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+  }
+  
+  .cv-card:hover {
+    transform: scale(1.01);
+  }
+  
+  .cv-card h3 {
+    margin-top: 0;
+    color: #1e293b;
+  }
+  
+  /* Lista de educación */
+  ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  li {
+    margin-bottom: 5px;
+    color: #475569;
+  }
+  

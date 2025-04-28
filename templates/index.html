@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Revisión de Hojas de Vida con IA</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Revisión de Hojas de Vida con IA</h1>
+    <p class="intro-text">Sube tus hojas de vida en PDF y descubre los datos clave extraídos por nuestra inteligencia artificial.</p>
+
+    <form action="/" method="POST" enctype="multipart/form-data" class="upload-form">
+      <label for="files" class="upload-label">📎 Selecciona archivos PDF:</label>
+      <input type="file" name="files" id="files" multiple accept=".pdf" required>
+      <button type="submit">🚀 Analizar Hojas de Vida</button>
+    </form>
+
+    {% if resumes %}
+    <div class="results">
+      <h2>📊 Resultados del Análisis</h2>
+      {% for cv in resumes %}
+        <div class="cv-card">
+          <h3>📁 {{ cv.filename }}</h3>
+          <p><strong>👤 Nombre:</strong> {{ cv.name }}</p>
+          <p><strong>📧 Email:</strong> {{ cv.email }}</p>
+          <p><strong>📱 Teléfono:</strong> {{ cv.phone }}</p>
+          <p><strong>🧠 Habilidades detectadas:</strong> {{ cv.skills | join(', ') }}</p>
+          <p><strong>🎓 Educación:</strong></p>
+          <ul>
+            {% for edu in cv.education %}
+              <li>{{ edu }}</li>
+            {% endfor %}
+          </ul>
+          <p><strong>⭐ Puntaje:</strong> {{ cv.score }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>

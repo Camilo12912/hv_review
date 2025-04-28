@@ -1,0 +1,5 @@
+flask
+scikit-learn
+pandas
+fitz  # PyMuPDF para leer PDFs
+joblib
