@@ -1,5 +1,2 @@
-*.pt
-*.bin
-*.log
 /results/*
 !/results/.gitkeep
