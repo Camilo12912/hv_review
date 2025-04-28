@@ -1,6 +1,5 @@
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 import pandas as pd
-import torch
 from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments
 from datasets import Dataset
 from sklearn.model_selection import train_test_split
@@ -49,14 +48,14 @@ df_dataset = dataset.to_pandas()
 # Dividir el dataset en entrenamiento y evaluación (80%/20%)
 train_df, eval_df = train_test_split(df_dataset, test_size=0.2)
 
-# Convertir de nuevo los DataFrames a Datasets
+
 train_dataset = Dataset.from_pandas(train_df)
 eval_dataset = Dataset.from_pandas(eval_df)
 
-# 4. Definir modelo
+
 model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_labels=len(set(labels)))
 
-# 5. Configurar entrenamiento
+
 training_args = TrainingArguments(
     output_dir='./results',          # Directorio donde se guardan los resultados
     per_device_train_batch_size=8,   # Tamaño del batch para entrenamiento
@@ -66,7 +65,7 @@ training_args = TrainingArguments(
     logging_dir='./logs',            # Directorio para los logs
 )
 
-# Crear el entrenador con las métricas
+
 trainer = Trainer(
     model=model,                          # El modelo a entrenar
     args=training_args,                   # Los parámetros de entrenamiento
